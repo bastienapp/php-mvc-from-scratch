@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - {{ game['title'] }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="css/game-show.css">
+{% endblock %}
+
+{% block body %}
+<main class="container">
+    <section class="row row-cols-1">
+        {% include "games/_card.html.twig" with {'linkUrl': '/', 'linkText': 'Return to the list'} %}
+    </section>
+</main>
+{% endblock %}

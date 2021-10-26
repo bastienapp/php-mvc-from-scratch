@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ parent() }} - Home
+{% endblock %}
+
+{% block body %}
+ <main class="container">
+    <section class="row row-cols-1 row-cols-lg-3">
+        {% for game in games %}
+            {% include "games/_card.html.twig" with {'linkUrl': '/games?id=' ~ game['id'], 'linkText': 'More infos...'} %}
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}
